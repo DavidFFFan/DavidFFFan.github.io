@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: 转载 | David的文具盒</title>
+  <title>1124. 表现良好的最长时间段 | David的文具盒</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="David的文具盒">
-<meta property="og:url" content="http://example.com/tags/%E8%BD%AC%E8%BD%BD/index.html">
+  <meta name="description" content="题目描述给你一份工作时间表 hours，上面记录着某一位员工每天的工作小时数。 我们认为当员工一天中的工作小时数大于 8 小时的时候，那么这一天就是「劳累的一天」。 所谓「表现良好的时间段」，意味在这段时间内，「劳累的天数」是严格 大于「不劳累的天数」。 请你返回「表现良好时间段」的最大长度。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1124. 表现良好的最长时间段">
+<meta property="og:url" content="http://example.com/2020/11/03/1124-%E8%A1%A8%E7%8E%B0%E8%89%AF%E5%A5%BD%E7%9A%84%E6%9C%80%E9%95%BF%E6%97%B6%E9%97%B4%E6%AE%B5/index.html">
 <meta property="og:site_name" content="David的文具盒">
+<meta property="og:description" content="题目描述给你一份工作时间表 hours，上面记录着某一位员工每天的工作小时数。 我们认为当员工一天中的工作小时数大于 8 小时的时候，那么这一天就是「劳累的一天」。 所谓「表现良好的时间段」，意味在这段时间内，「劳累的天数」是严格 大于「不劳累的天数」。 请你返回「表现良好时间段」的最大长度。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-03T06:03:52.000Z">
+<meta property="article:modified_time" content="2020-11-03T11:22:50.624Z">
 <meta property="article:author" content="David Fan">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="前缀和">
+<meta property="article:tag" content="单调栈">
+<meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="David的文具盒" type="application/atom+xml">
@@ -146,65 +154,228 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-1124-表现良好的最长时间段" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	 
-<a href="/2020/11/02/python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%EF%BC%88%E6%A6%82%E5%BF%B5%E7%AF%87%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-11-02T02:42:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/02/python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%EF%BC%88%E6%A6%82%E5%BF%B5%E7%AF%87%EF%BC%89/">python之并发编程（概念篇）</a>
+    <h1 class="article-title" itemprop="name">
+      1124. 表现良好的最长时间段
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+         
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/11/03/1124-%E8%A1%A8%E7%8E%B0%E8%89%AF%E5%A5%BD%E7%9A%84%E6%9C%80%E9%95%BF%E6%97%B6%E9%97%B4%E6%AE%B5/" class="archive-article-date">
+  	<time datetime="2020-11-03T06:03:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-well-performing-interval/">题目描述</a></h2><p>给你一份工作时间表 <code>hours</code>，上面记录着某一位员工每天的工作小时数。</p>
+<p>我们认为当员工一天中的工作小时数大于 <code>8</code> 小时的时候，那么这一天就是「<strong>劳累的一天</strong>」。</p>
+<p>所谓「表现良好的时间段」，意味在这段时间内，「劳累的天数」是严格 <strong>大于</strong>「不劳累的天数」。</p>
+<p>请你返回「表现良好时间段」的最大长度。</p>
+ <a id="more"></a>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：hours &#x3D; [9,9,6,0,6,6,9]</span><br><span class="line">输出：3</span><br><span class="line">解释：最长的表现良好时间段是 [9,9,6]。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= hours.length &lt;= 10000</code></li>
+<li><code>0 &lt;= hours[i] &lt;= 16</code></li>
+</ul>
+<hr>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><strong>准备工作</strong><br>   将$工作时间&gt;8小时$记为1，$&lt;8$记为$-1$，计算前缀和<code>presum</code>。</p>
+<ul>
+<li><p><strong>暴力枚举</strong></p>
+<ul>
+<li>使用两根指针，<code>i</code>，<code>j</code>去枚举区间<code>(j,i)</code>，记录最大的<code>i-j</code>，可以进行适度剪枝，but仍旧超时。</li>
+<li>时间复杂度：$O(n^2)$，空间复杂度：$O(n)$</li>
+<li><strong>c++代码</strong></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">longestWPI</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; hours)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = hours.size();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">presum</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;++i) &#123;</span><br><span class="line">            presum[i + <span class="number">1</span>] = presum[i] + (hours[i] &gt; <span class="number">8</span>? <span class="number">1</span> : <span class="number">-1</span> );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n;i &gt; <span class="number">0</span>;--i) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;++j) &#123;</span><br><span class="line">                <span class="keyword">if</span>(i - j &lt;= res) <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">if</span>(presum[i] - presum[j] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    res = max(res, i - j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>二分查找</p>
+<ul>
+<li>枚举区间值，<code>l = 0</code>，<code>r = n</code></li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/Wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转载</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">单调栈</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分查找</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/03/1124-%E8%A1%A8%E7%8E%B0%E8%89%AF%E5%A5%BD%E7%9A%84%E6%9C%80%E9%95%BF%E6%97%B6%E9%97%B4%E6%AE%B5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/11/04/57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          57. 插入区间
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/11/03/941-%E6%9C%89%E6%95%88%E7%9A%84%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">941. 有效的山脉数组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -240,9 +411,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
