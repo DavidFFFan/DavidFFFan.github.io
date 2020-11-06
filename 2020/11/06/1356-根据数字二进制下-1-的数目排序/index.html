@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>1529. 灯泡开关 IV | David的文具盒</title>
+  <title>1356. 根据数字二进制下 1 的数目排序 | David的文具盒</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述房间中有 n 个灯泡，编号从 0 到 n-1 ，自左向右排成一行。最开始的时候，所有的灯泡都是 关 着的。 请你设法使得灯泡的开关状态和 target 描述的状态一致，其中 target[i] 等于 1 第 i 个灯泡是开着的，等于 0 意味着第 i 个灯是关着的。 有一个开关可以用于翻转灯泡的状态，翻转操作定义如下：  选择当前配置下的任意一个灯泡（下标为 i ） 翻转下标从 i 到 n">
+  <meta name="description" content="题目描述给你一个整数数组 arr 。请你将数组中的元素按照其二进制表示中数字 1 的数目升序排序。 如果存在多个数字二进制中 1 的数目相同，则必须将它们按照数值大小升序排列。 请你返回排序后的数组。 示例 1： 1234567输入：arr &#x3D; [0,1,2,3,4,5,6,7,8]输出：[0,1,2,4,8,3,5,6,7]解释：[0] 是唯一一个有 0 个 1 的数。[1,2,4,8">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1529. 灯泡开关 IV">
-<meta property="og:url" content="http://example.com/2020/10/29/1529-%E7%81%AF%E6%B3%A1%E5%BC%80%E5%85%B3-IV/index.html">
+<meta property="og:title" content="1356. 根据数字二进制下 1 的数目排序">
+<meta property="og:url" content="http://example.com/2020/11/06/1356-%E6%A0%B9%E6%8D%AE%E6%95%B0%E5%AD%97%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8B-1-%E7%9A%84%E6%95%B0%E7%9B%AE%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="David的文具盒">
-<meta property="og:description" content="题目描述房间中有 n 个灯泡，编号从 0 到 n-1 ，自左向右排成一行。最开始的时候，所有的灯泡都是 关 着的。 请你设法使得灯泡的开关状态和 target 描述的状态一致，其中 target[i] 等于 1 第 i 个灯泡是开着的，等于 0 意味着第 i 个灯是关着的。 有一个开关可以用于翻转灯泡的状态，翻转操作定义如下：  选择当前配置下的任意一个灯泡（下标为 i ） 翻转下标从 i 到 n">
+<meta property="og:description" content="题目描述给你一个整数数组 arr 。请你将数组中的元素按照其二进制表示中数字 1 的数目升序排序。 如果存在多个数字二进制中 1 的数目相同，则必须将它们按照数值大小升序排列。 请你返回排序后的数组。 示例 1： 1234567输入：arr &#x3D; [0,1,2,3,4,5,6,7,8]输出：[0,1,2,4,8,3,5,6,7]解释：[0] 是唯一一个有 0 个 1 的数。[1,2,4,8">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-29T14:09:39.000Z">
-<meta property="article:modified_time" content="2020-11-01T14:21:28.845Z">
+<meta property="article:published_time" content="2020-11-06T00:29:02.000Z">
+<meta property="article:modified_time" content="2020-11-06T03:39:45.774Z">
 <meta property="article:author" content="David Fan">
 <meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="DP">
+<meta property="article:tag" content="每日一题">
+<meta property="article:tag" content="位运算">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="David的文具盒" type="application/atom+xml">
@@ -152,14 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1529-灯泡开关-IV" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-1356-根据数字二进制下-1-的数目排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      1529. 灯泡开关 IV
+      1356. 根据数字二进制下 1 的数目排序
     </h1>
   
 
@@ -170,52 +171,44 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/10/29/1529-%E7%81%AF%E6%B3%A1%E5%BC%80%E5%85%B3-IV/" class="archive-article-date">
-  	<time datetime="2020-10-29T14:09:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
+<a href="/2020/11/06/1356-%E6%A0%B9%E6%8D%AE%E6%95%B0%E5%AD%97%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8B-1-%E7%9A%84%E6%95%B0%E7%9B%AE%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2020-11-06T00:29:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/bulb-switcher-iv/">题目描述</a></h2><p>房间中有 <code>n</code> 个灯泡，编号从 <code>0</code> 到 <code>n-1</code> ，自左向右排成一行。最开始的时候，所有的灯泡都是 <strong>关</strong> 着的。</p>
-<p>请你设法使得灯泡的开关状态和 <code>target</code> 描述的状态一致，其中 <code>target[i]</code> 等于 <code>1</code> 第 <code>i</code> 个灯泡是开着的，等于 <code>0</code> 意味着第 <code>i</code> 个灯是关着的。</p>
-<p>有一个开关可以用于翻转灯泡的状态，翻转操作定义如下：</p>
-<ul>
-<li>选择当前配置下的任意一个灯泡（下标为 <code>i</code> ）</li>
-<li>翻转下标从 <code>i</code> 到 <code>n-1</code> 的每个灯泡</li>
-</ul>
-<p>翻转时，如果灯泡的状态为 <code>0</code> 就变为 <code>1</code>，为 <code>1</code> 就变为 <code>0</code> 。</p>
-<p>返回达成 <code>target</code> 描述的状态所需的 <strong>最少</strong> 翻转次数。</p>
-<a id="more"></a>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-integers-by-the-number-of-1-bits/">题目描述</a></h2><p>给你一个整数数组 <code>arr</code> 。请你将数组中的元素按照其二进制表示中数字 <strong>1</strong> 的数目升序排序。</p>
+<p>如果存在多个数字二进制中 <strong>1</strong> 的数目相同，则必须将它们按照数值大小升序排列。</p>
+<p>请你返回排序后的数组。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：target &#x3D; &quot;10111&quot;</span><br><span class="line">输出：3</span><br><span class="line">解释：初始配置 &quot;00000&quot;.</span><br><span class="line">从第 3 个灯泡（下标为 2）开始翻转 &quot;00000&quot; -&gt; &quot;00111&quot;</span><br><span class="line">从第 1 个灯泡（下标为 0）开始翻转 &quot;00111&quot; -&gt; &quot;11000&quot;</span><br><span class="line">从第 2 个灯泡（下标为 1）开始翻转 &quot;11000&quot; -&gt; &quot;10111&quot;</span><br><span class="line">至少需要翻转 3 次才能达成 target 描述的状态</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：arr &#x3D; [0,1,2,3,4,5,6,7,8]</span><br><span class="line">输出：[0,1,2,4,8,3,5,6,7]</span><br><span class="line">解释：[0] 是唯一一个有 0 个 1 的数。</span><br><span class="line">[1,2,4,8] 都有 1 个 1 。</span><br><span class="line">[3,5,6] 有 2 个 1 。</span><br><span class="line">[7] 有 3 个 1 。</span><br><span class="line">按照 1 的个数排序得到的结果数组为 [0,1,2,4,8,3,5,6,7]</span><br></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：target &#x3D; &quot;101&quot;</span><br><span class="line">输出：3</span><br><span class="line">解释：&quot;000&quot; -&gt; &quot;111&quot; -&gt; &quot;100&quot; -&gt; &quot;101&quot;.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：arr &#x3D; [1024,512,256,128,64,32,16,8,4,2,1]</span><br><span class="line">输出：[1,2,4,8,16,32,64,128,256,512,1024]</span><br><span class="line">解释：数组中所有整数二进制下都只有 1 个 1 ，所以你需要按照数值大小将它们排序。</span><br></pre></td></tr></table></figure>
 <p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：target &#x3D; &quot;00000&quot;</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：arr &#x3D; [10000,10000]</span><br><span class="line">输出：[10000,10000]</span><br></pre></td></tr></table></figure>
 <p><strong>示例 4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：target &#x3D; &quot;001011101&quot;</span><br><span class="line">输出：5</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：arr &#x3D; [2,3,5,7,11,13,17,19]</span><br><span class="line">输出：[2,3,5,17,7,11,13,19]</span><br></pre></td></tr></table></figure>
+<p><strong>示例 5：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：arr &#x3D; [10,100,1000,10000]</span><br><span class="line">输出：[10,100,10000,1000]</span><br></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= target.length &lt;= 10^5</code></li>
-<li><code>target[i] == &#39;0&#39;</code> 或者 <code>target[i] == &#39;1&#39;</code></li>
+<li><code>1 &lt;= arr.length &lt;= 500</code></li>
+<li><code>0 &lt;= arr[i] &lt;= 10^4</code></li>
 </ul>
 <hr>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><ul>
-<li>$dp[i][0]$表示从第<code>i</code>个灯泡到末尾转换为和目标状态相同的需要的次数，$0\leq i &lt; n$</li>
-<li>$dp[i][1]$表示从第<code>i</code>个灯泡到末尾转换为和目标状态相反的需要的次数，$0\leq i &lt; n$<br>状态转移方程<script type="math/tex; mode=display">
-dp[i][0] = \begin {cases}
-dp[i+1][0],&\text{target[i]='0'} \\
-dp[i+1][1]+1,&\text{target[i]='1'}
-\end{cases}</script><script type="math/tex; mode=display">
-dp[i][1] = \begin {cases}
-dp[i+1][0]+1,&\text{target[i]='0'} \\
-dp[i+1][1],&\text{target[i]='1'}
-\end{cases}</script><script type="math/tex; mode=display">
-dp[n][0] = dp[n][1] = 0</script></li>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>统计二进制中1的个数</p>
+<ul>
+<li>可以判断末尾是否为1，然后进行向右移位，移位之后数字为0时则没有1。</li>
 </ul>
-<h3 id="Python代码"><a href="#Python代码" class="headerlink" title="Python代码"></a>Python代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minFlips</span>(<span class="params">self, target: <span class="built_in">str</span></span>) -&gt; int:</span></span><br><span class="line">        dp = [[<span class="number">0</span>]*<span class="number">2</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(target)+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(target)<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">            <span class="comment"># print(i,end = &#x27;,&#x27;)</span></span><br><span class="line">            <span class="keyword">if</span> target[i] == <span class="string">&#x27;0&#x27;</span>:</span><br><span class="line">                dp[i][<span class="number">0</span>] = dp[i+<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">                dp[i][<span class="number">1</span>] = dp[i+<span class="number">1</span>][<span class="number">0</span>] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i][<span class="number">0</span>] = dp[i+<span class="number">1</span>][<span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">                dp[i][<span class="number">1</span>] = dp[i+<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h6 id="使用仿函数"><a href="#使用仿函数" class="headerlink" title="使用仿函数"></a>使用仿函数</h6><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">cmp</span> &#123;</span></span><br><span class="line">        <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> countbit(x) &lt; countbit(y) || (countbit(x) == countbit(y)&amp;&amp;x &lt; y);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">countbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(x) &#123;</span><br><span class="line">                cnt += x &amp; <span class="number">1</span>;</span><br><span class="line">                x = x&gt;&gt;<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> cnt;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sortByBits</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        sort(arr.begin(), arr.end(), cmp());</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h6 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h6><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sortByBits</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> countbit = [](<span class="keyword">int</span> x) -&gt;<span class="keyword">int</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(x) &#123;</span><br><span class="line">                cnt += x &amp; <span class="number">1</span>;</span><br><span class="line">                x = x&gt;&gt;<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> cnt;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">auto</span> cmp = [&amp;countbit](<span class="keyword">int</span> x,<span class="keyword">int</span> y)-&gt;<span class="keyword">bool</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> countbit(x) &lt; countbit(y) || (countbit(x) == countbit(y)&amp;&amp; x &lt; y);</span><br><span class="line">        &#125;;</span><br><span class="line">        sort(arr.begin(), arr.end(), cmp);</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h6 id="二进制常见操作"><a href="#二进制常见操作" class="headerlink" title="二进制常见操作"></a>二进制常见操作</h6><p>消去二进制中最后的一个<code>1</code>：<code>x &amp; x-1</code></p>
+<p><code>&amp;</code></p>
+<p><code>|</code></p>
+<p><code>^</code></p>
+
       
 
       
@@ -258,7 +251,11 @@ dp[n][0] = dp[n][1] = 0</script></li>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
         		</li>
       		
 		</ul>
@@ -314,7 +311,7 @@ dp[n][0] = dp[n][1] = 0</script></li>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/29/1529-%E7%81%AF%E6%B3%A1%E5%BC%80%E5%85%B3-IV/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/06/1356-%E6%A0%B9%E6%8D%AE%E6%95%B0%E5%AD%97%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8B-1-%E7%9A%84%E6%95%B0%E7%9B%AE%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -328,18 +325,9 @@ dp[n][0] = dp[n][1] = 0</script></li>
   
 <nav id="article-nav">
   
-    <a href="/2020/10/29/142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-II/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          142. 环形链表 II
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/29/LCP-25-%E5%8F%A4%E8%91%A3%E9%94%AE%E7%9B%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LCP 25. 古董键盘</div>
+    <a href="/2020/11/05/127-%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">127. 单词接龙</div>
       <i class="icon-circle-right"></i>
     </a>
   
