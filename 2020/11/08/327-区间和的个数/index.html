@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: 哈希 | David的文具盒</title>
+  <title>327. 区间和的个数 | David的文具盒</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="David的文具盒">
-<meta property="og:url" content="http://example.com/tags/%E5%93%88%E5%B8%8C/index.html">
+  <meta name="description" content="题目描述给定一个整数数组 nums，返回区间和在 [lower, upper] 之间的个数，包含 lower 和 upper。区间和 S(i, j) 表示在 nums 中，位置从 i 到 j 的元素之和，包含 i 和 j (i ≤ j)。 说明:最直观的算法复杂度是 O(n2) ，请在此基础上优化你的算法。 示例: 123输入: nums &#x3D; [-2,5,-1], lower &amp;#x3D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="327. 区间和的个数">
+<meta property="og:url" content="http://example.com/2020/11/08/327-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E4%B8%AA%E6%95%B0/index.html">
 <meta property="og:site_name" content="David的文具盒">
+<meta property="og:description" content="题目描述给定一个整数数组 nums，返回区间和在 [lower, upper] 之间的个数，包含 lower 和 upper。区间和 S(i, j) 表示在 nums 中，位置从 i 到 j 的元素之和，包含 i 和 j (i ≤ j)。 说明:最直观的算法复杂度是 O(n2) ，请在此基础上优化你的算法。 示例: 123输入: nums &#x3D; [-2,5,-1], lower &amp;#x3D">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-08T01:46:04.000Z">
+<meta property="article:modified_time" content="2020-11-08T03:28:27.423Z">
 <meta property="article:author" content="David Fan">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="每日一题">
+<meta property="article:tag" content="前缀和">
+<meta property="article:tag" content="归并排序">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="David的文具盒" type="application/atom+xml">
@@ -146,37 +154,93 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-327-区间和的个数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	 
-<a href="/2020/11/02/349-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/" class="archive-article-date">
-  	<time datetime="2020-11-02T01:17:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/02/349-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/">349. 两个数组的交集</a>
+    <h1 class="article-title" itemprop="name">
+      327. 区间和的个数
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+         
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/11/08/327-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E4%B8%AA%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2020-11-08T01:46:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-of-range-sum/">题目描述</a></h2><p>给定一个整数数组 <code>nums</code>，返回区间和在 <code>[lower, upper]</code> 之间的个数，包含 <code>lower</code> 和 <code>upper</code>。<br>区间和 <code>S(i, j)</code> 表示在 <code>nums</code> 中，位置从 <code>i</code> 到 <code>j</code> 的元素之和，包含 <code>i</code> 和 <code>j</code> (<code>i</code> ≤ <code>j</code>)。</p>
+<p><strong>说明:</strong><br>最直观的算法复杂度是 <em>O</em>(<em>n</em>2) ，请在此基础上优化你的算法。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums &#x3D; [-2,5,-1], lower &#x3D; -2, upper &#x3D; 2,</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 3个区间分别是: [0,0], [2,2], [0,2]，它们表示的和分别为: -2, -1, 2。</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h3><p>计算全部区间，$O(n^2)$，超时。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countRangeSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> lower, <span class="keyword">int</span> upper)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size(), res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;++i) &#123;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> rangesum = <span class="number">0L</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i;j &lt; n;++j) &#123;</span><br><span class="line">                rangesum += nums[j];</span><br><span class="line">                <span class="keyword">if</span>(rangesum &gt;= lower &amp;&amp; rangesum &lt;= upper) ++res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h3><h5 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h5><p>计算前缀和<code>presum</code>，问题转化为对任意的前缀和<code>val = presum[i] - presum[j](i &gt;= j)</code>落在 <code>[lower, upper]</code> 之间的个数。</p>
+<p>计算前缀和注意第一个元素要补0。</p>
+<p>若前缀和无序，计算的时间复杂度依旧是$O(n^2)$，若前缀和有序。计算时，可以使用双指针。</p>
+<h5 id="问题划分"><a href="#问题划分" class="headerlink" title="问题划分"></a>问题划分</h5><p>若两个区间<code>[l,m)</code>，<code>[m, r)</code>的前缀和都是有序的，可以利用三指针。</p>
+<ul>
+<li><p><code>p0</code>指向<code>l</code>， <code>p1</code>指向<code>m</code>，<code>p2</code>指向<code>m</code></p>
+</li>
+<li><p><code>p1</code>后移直到<code>presum[p1] - presum[p0] &gt;= lower</code></p>
+</li>
+<li><p><code>p2</code>后移直到<code>presum[p2] - presum[p0] &gt; upper</code></p>
+</li>
+<li><p><code>p2 - p1</code>则为以<code>p0</code>为起点的区间数量，由于<code>[l, m)</code>是有序的，因此<code>p0</code>后移之后，<code>p1</code>，<code>p2</code>必定后移，不用向前回溯，减少了时间。</p>
+</li>
+</ul>
+<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">merage</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;&amp; presum, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> lower, <span class="keyword">int</span> upper)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 左右右开，[l,r)，区间长度为1时，直接返回0</span></span><br><span class="line">        <span class="keyword">if</span>(l == r - <span class="number">1</span> || l == r) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> m = l + (r - l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        res += merage(presum, l, m, lower, upper);</span><br><span class="line">        res += merage(presum, m, r, lower, upper);</span><br><span class="line">        <span class="keyword">int</span> p0 = l, p1 = m, p2 = m;</span><br><span class="line">        <span class="keyword">while</span>(p0 &lt; m) &#123;</span><br><span class="line">            <span class="keyword">while</span>(p1 &lt; r &amp;&amp; presum[p1] - presum[p0] &lt; lower) ++p1;</span><br><span class="line">            <span class="keyword">while</span>(p2 &lt; r &amp;&amp; presum[p2] - presum[p0] &lt;= upper) ++p2;</span><br><span class="line">            res += p2 - p1;</span><br><span class="line">            ++p0;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; <span class="title">temp</span><span class="params">(r - l)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, j = l, k = m;i &lt; r - l;++i) &#123;</span><br><span class="line">            <span class="keyword">if</span>(j &lt; m &amp;&amp; k &lt; r) &#123;</span><br><span class="line">                <span class="keyword">if</span>(presum[j] &lt; presum[k]) </span><br><span class="line">                temp[i] = presum[j++];</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                temp[i] = presum[k++];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(j &lt; m)&#123;</span><br><span class="line">                temp[i] = presum[j++];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                temp[i] = presum[k++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; r - l;++i) &#123;</span><br><span class="line">            presum[i + l] = temp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countRangeSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> lower, <span class="keyword">int</span> upper)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; <span class="title">presum</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.size();++i) &#123;</span><br><span class="line">            presum[i+<span class="number">1</span>] = presum[i] + nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> merage(presum, <span class="number">0</span>, n + <span class="number">1</span>, lower, upper);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>时间复杂度</strong></p>
+<p>$T(N) = 2*T(N/2) + O(N)$</p>
+<p>$T(N) = O(NlogN)$</p>
+<h5 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h5><p>设空间占用为 $M(N)$，递归调用所需空间为 $M(N/2)$，而合并数组所需空间为 O(N)O(N)，故</p>
+<script type="math/tex; mode=display">M(N) = \max\big\{M(N/2), O(N)\big\} = M(N/2) + O(N)</script><p>$M(N) = O(N)$</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/Wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,37 +250,120 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双指针</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">哈希</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">归并排序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/08/327-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E4%B8%AA%E6%95%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/11/08/122-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-II/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">122. 买卖股票的最佳时机 II</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -252,9 +399,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
