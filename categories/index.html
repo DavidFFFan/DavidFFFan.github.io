@@ -1,0 +1,963 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="David Fan">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="分类">
+<meta property="og:url" content="http://example.com/categories/index.html">
+<meta property="og:site_name" content="David的文具盒">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="David Fan">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>分类 - David的文具盒</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>David的文具盒</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="分类">
+              
+            </span>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+
+
+
+<div class="category-list">
+  
+  
+  
+  
+    
+    
+    <div class="category row">
+      <a
+        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-071fda8ffed879b16c3308d2133bac46" role="tab" data-toggle="collapse" href="#collapse-071fda8ffed879b16c3308d2133bac46"
+        aria-expanded="false"
+      >
+        LeetCode
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>21</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-071fda8ffed879b16c3308d2133bac46" role="tabpanel" aria-labelledby="heading-071fda8ffed879b16c3308d2133bac46">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-dc723a61b3f6f05dfbe431cd1c3aee7b" role="tab" data-toggle="collapse" href="#collapse-dc723a61b3f6f05dfbe431cd1c3aee7b"
+        aria-expanded="false"
+      >
+        模拟
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E6%A8%A1%E6%8B%9F/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>6</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-dc723a61b3f6f05dfbe431cd1c3aee7b" role="tabpanel" aria-labelledby="heading-dc723a61b3f6f05dfbe431cd1c3aee7b">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/12/922-%E6%8C%89%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84-II/" class="list-group-item list-group-item-action">
+          <span class="category-post">922. 按奇偶排序数组 II</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/10/31-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/" class="list-group-item list-group-item-action">
+          <span class="category-post">31. 下一个排列</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/04/57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/" class="list-group-item list-group-item-action">
+          <span class="category-post">57. 插入区间</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/03/941-%E6%9C%89%E6%95%88%E7%9A%84%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84/" class="list-group-item list-group-item-action">
+          <span class="category-post">941. 有效的山脉数组</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/01/140-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86-II/" class="list-group-item list-group-item-action">
+          <span class="category-post">140. 单词拆分 II</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/10/30/463-%E5%B2%9B%E5%B1%BF%E7%9A%84%E5%91%A8%E9%95%BF/" class="list-group-item list-group-item-action">
+          <span class="category-post">463. 岛屿的周长</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-8c05890ac8f93d0195f884f1ff4656ec" role="tab" data-toggle="collapse" href="#collapse-8c05890ac8f93d0195f884f1ff4656ec"
+        aria-expanded="false"
+      >
+        动态规划
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>5</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-8c05890ac8f93d0195f884f1ff4656ec" role="tabpanel" aria-labelledby="heading-8c05890ac8f93d0195f884f1ff4656ec">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/11/514-%E8%87%AA%E7%94%B1%E4%B9%8B%E8%B7%AF/" class="list-group-item list-group-item-action">
+          <span class="category-post">514. 自由之路</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/08/122-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-II/" class="list-group-item list-group-item-action">
+          <span class="category-post">122. 买卖股票的最佳时机 II</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/01/140-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86-II/" class="list-group-item list-group-item-action">
+          <span class="category-post">140. 单词拆分 II</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/10/29/1529-%E7%81%AF%E6%B3%A1%E5%BC%80%E5%85%B3-IV/" class="list-group-item list-group-item-action">
+          <span class="category-post">1529. 灯泡开关 IV</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/10/29/LCP-25-%E5%8F%A4%E8%91%A3%E9%94%AE%E7%9B%98/" class="list-group-item list-group-item-action">
+          <span class="category-post">LCP 25. 古董键盘</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-b06eb3c1a9d99b8e59c2ef94d75cbb0f" role="tab" data-toggle="collapse" href="#collapse-b06eb3c1a9d99b8e59c2ef94d75cbb0f"
+        aria-expanded="false"
+      >
+        单调栈
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E5%8D%95%E8%B0%83%E6%A0%88/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>3</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-b06eb3c1a9d99b8e59c2ef94d75cbb0f" role="tabpanel" aria-labelledby="heading-b06eb3c1a9d99b8e59c2ef94d75cbb0f">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/15/402-%E7%A7%BB%E6%8E%89K%E4%BD%8D%E6%95%B0%E5%AD%97/" class="list-group-item list-group-item-action">
+          <span class="category-post">402. 移掉K位数字</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/08/962-%E6%9C%80%E5%A4%A7%E5%AE%BD%E5%BA%A6%E5%9D%A1/" class="list-group-item list-group-item-action">
+          <span class="category-post">962. 最大宽度坡</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/03/1124-%E8%A1%A8%E7%8E%B0%E8%89%AF%E5%A5%BD%E7%9A%84%E6%9C%80%E9%95%BF%E6%97%B6%E9%97%B4%E6%AE%B5/" class="list-group-item list-group-item-action">
+          <span class="category-post">1124. 表现良好的最长时间段</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-b5dbd2c8c3e080e34db9053a36b2b2d3" role="tab" data-toggle="collapse" href="#collapse-b5dbd2c8c3e080e34db9053a36b2b2d3"
+        aria-expanded="false"
+      >
+        哈希
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E5%93%88%E5%B8%8C/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>2</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-b5dbd2c8c3e080e34db9053a36b2b2d3" role="tabpanel" aria-labelledby="heading-b5dbd2c8c3e080e34db9053a36b2b2d3">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/14/1122-%E6%95%B0%E7%BB%84%E7%9A%84%E7%9B%B8%E5%AF%B9%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
+          <span class="category-post">1122. 数组的相对排序</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/11/02/349-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/" class="list-group-item list-group-item-action">
+          <span class="category-post">349. 两个数组的交集</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-777cc60e866fff12295e870743c02771" role="tab" data-toggle="collapse" href="#collapse-777cc60e866fff12295e870743c02771"
+        aria-expanded="false"
+      >
+        链表
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E9%93%BE%E8%A1%A8/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>2</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-777cc60e866fff12295e870743c02771" role="tabpanel" aria-labelledby="heading-777cc60e866fff12295e870743c02771">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/13/328-%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8/" class="list-group-item list-group-item-action">
+          <span class="category-post">328. 奇偶链表</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2020/10/29/142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-II/" class="list-group-item list-group-item-action">
+          <span class="category-post">142. 环形链表 II</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-e0407c4da384781218d7d89d043ba67b" role="tab" data-toggle="collapse" href="#collapse-e0407c4da384781218d7d89d043ba67b"
+        aria-expanded="false"
+      >
+        广度优先搜索
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-e0407c4da384781218d7d89d043ba67b" role="tabpanel" aria-labelledby="heading-e0407c4da384781218d7d89d043ba67b">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/05/127-%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="list-group-item list-group-item-action">
+          <span class="category-post">127. 单词接龙</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-c04f8667013a3097bf12e98e424a915b" role="tab" data-toggle="collapse" href="#collapse-c04f8667013a3097bf12e98e424a915b"
+        aria-expanded="false"
+      >
+        位运算
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-c04f8667013a3097bf12e98e424a915b" role="tabpanel" aria-labelledby="heading-c04f8667013a3097bf12e98e424a915b">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/06/1356-%E6%A0%B9%E6%8D%AE%E6%95%B0%E5%AD%97%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8B-1-%E7%9A%84%E6%95%B0%E7%9B%AE%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
+          <span class="category-post">1356. 根据数字二进制下 1 的数目排序</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-9556661369382e0ad772180a2c789e69" role="tab" data-toggle="collapse" href="#collapse-9556661369382e0ad772180a2c789e69"
+        aria-expanded="false"
+      >
+        归并排序
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-9556661369382e0ad772180a2c789e69" role="tabpanel" aria-labelledby="heading-9556661369382e0ad772180a2c789e69">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/08/327-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E4%B8%AA%E6%95%B0/" class="list-group-item list-group-item-action">
+          <span class="category-post">327. 区间和的个数</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-8f1d985bdc604cd7dae639832270cd14" role="tab" data-toggle="collapse" href="#collapse-8f1d985bdc604cd7dae639832270cd14"
+        aria-expanded="false"
+      >
+        记忆化搜索
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-8f1d985bdc604cd7dae639832270cd14" role="tabpanel" aria-labelledby="heading-8f1d985bdc604cd7dae639832270cd14">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/01/140-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86-II/" class="list-group-item list-group-item-action">
+          <span class="category-post">140. 单词拆分 II</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-8b1fa850914185f78f36fd9a8b716ba4" role="tab" data-toggle="collapse" href="#collapse-8b1fa850914185f78f36fd9a8b716ba4"
+        aria-expanded="false"
+      >
+        堆
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E5%A0%86/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-8b1fa850914185f78f36fd9a8b716ba4" role="tabpanel" aria-labelledby="heading-8b1fa850914185f78f36fd9a8b716ba4">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/09/973-%E6%9C%80%E6%8E%A5%E8%BF%91%E5%8E%9F%E7%82%B9%E7%9A%84-K-%E4%B8%AA%E7%82%B9/" class="list-group-item list-group-item-action">
+          <span class="category-post">973. 最接近原点的 K 个点</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-1c74aefdf6c8fa046dd3dfdcd5ec42c3" role="tab" data-toggle="collapse" href="#collapse-1c74aefdf6c8fa046dd3dfdcd5ec42c3"
+        aria-expanded="false"
+      >
+        贪心
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/LeetCode/%E8%B4%AA%E5%BF%83/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-1c74aefdf6c8fa046dd3dfdcd5ec42c3" role="tabpanel" aria-labelledby="heading-1c74aefdf6c8fa046dd3dfdcd5ec42c3">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/08/122-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-II/" class="list-group-item list-group-item-action">
+          <span class="category-post">122. 买卖股票的最佳时机 II</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category row">
+      <a
+        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-f6f87c9fdcf8b3c3f07f93f1ee8712c9" role="tab" data-toggle="collapse" href="#collapse-f6f87c9fdcf8b3c3f07f93f1ee8712c9"
+        aria-expanded="false"
+      >
+        C++
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/C/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-f6f87c9fdcf8b3c3f07f93f1ee8712c9" role="tabpanel" aria-labelledby="heading-f6f87c9fdcf8b3c3f07f93f1ee8712c9">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-2523e0c272cb676c4f59f97828966f78" role="tab" data-toggle="collapse" href="#collapse-2523e0c272cb676c4f59f97828966f78"
+        aria-expanded="false"
+      >
+        STL
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/C/STL/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-2523e0c272cb676c4f59f97828966f78" role="tabpanel" aria-labelledby="heading-2523e0c272cb676c4f59f97828966f78">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/04/emplace-back%E3%80%81push-back%E6%9D%82%E8%B0%88/" class="list-group-item list-group-item-action">
+          <span class="category-post">emplace_back、push_back杂谈</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category row">
+      <a
+        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-23eeeb4347bdd26bfc6b7ee9a3b755dd" role="tab" data-toggle="collapse" href="#collapse-23eeeb4347bdd26bfc6b7ee9a3b755dd"
+        aria-expanded="false"
+      >
+        python
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/python/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-23eeeb4347bdd26bfc6b7ee9a3b755dd" role="tabpanel" aria-labelledby="heading-23eeeb4347bdd26bfc6b7ee9a3b755dd">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+  
+    
+    
+    <div class="category-sub row">
+      <a
+        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-1a9a671bb1da8c030da96f67497751c7" role="tab" data-toggle="collapse" href="#collapse-1a9a671bb1da8c030da96f67497751c7"
+        aria-expanded="false"
+      >
+        并发编程
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/python/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-1a9a671bb1da8c030da96f67497751c7" role="tabpanel" aria-labelledby="heading-1a9a671bb1da8c030da96f67497751c7">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2020/11/02/python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%EF%BC%88%E6%A6%82%E5%BF%B5%E7%AF%87%EF%BC%89/" class="list-group-item list-group-item-action">
+          <span class="category-post">python之并发编程（概念篇）</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
