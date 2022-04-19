@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>std::ref详解</title>
+    <link href="/2022/04/19/std-ref%E8%AF%A6%E8%A7%A3/"/>
+    <url>/2022/04/19/std-ref%E8%AF%A6%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="std-ref详解"><a href="#std-ref详解" class="headerlink" title="std::ref详解"></a>std::ref详解</h1><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>C++</category>
+      
+      <category>STL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>402. 移掉K位数字</title>
     <link href="/2020/11/15/402-%E7%A7%BB%E6%8E%89K%E4%BD%8D%E6%95%B0%E5%AD%97/"/>
     <url>/2020/11/15/402-%E7%A7%BB%E6%8E%89K%E4%BD%8D%E6%95%B0%E5%AD%97/</url>
